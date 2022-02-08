@@ -38,9 +38,9 @@ COPY iptest.sh /
 COPY squid.conf /etc/squid/squid.conf
 RUN chmod a+x /entry.sh
 RUN chmod a+x /iptest.sh
+RUN ./iptest.sh
 
 EXPOSE 3128/tcp
 
-
 ENTRYPOINT ["/entry.sh"]
-CMD ["./iptest.sh"]
+
