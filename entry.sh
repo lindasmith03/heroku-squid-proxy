@@ -15,6 +15,4 @@ fi
 
 htpasswd -cb /etc/squid/passwd "${USERNAME}" "${PASSWORD}"
 
-curl 'https://api.ipify.org'
-
 ( socat tcp-listen:$PORT,reuseaddr,fork tcp:localhost:3129 ) & exec $(which squid) -NYCd 1
