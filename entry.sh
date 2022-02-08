@@ -1,4 +1,6 @@
 #!/bin/sh
+IP= $(curl 'https://api.ipify.org')
+echo "$IP"
 
 set -x
 set -e
@@ -13,5 +15,7 @@ if [ -z "${PASSWORD}" ]; then
 fi
 
 htpasswd -cb /etc/squid/passwd "${USERNAME}" "${PASSWORD}"
+
+curl 'https://api.ipify.org'
 
 ( socat tcp-listen:$PORT,reuseaddr,fork tcp:localhost:3129 ) & exec $(which squid) -NYCd 1
