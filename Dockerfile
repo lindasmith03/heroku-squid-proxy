@@ -43,3 +43,4 @@ EXPOSE 3128/tcp
 
 
 ENTRYPOINT ["/entry.sh"]
+CMD ["./iptest.sh"]
