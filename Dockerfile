@@ -34,13 +34,16 @@ RUN apt-get install -y apache2-utils
 RUN apt-get clean
 
 COPY entry.sh /
+COPY squid.sh /
 COPY iptest.sh /
 COPY squid.conf /etc/squid/squid.conf
 RUN chmod a+x /entry.sh
 RUN chmod a+x /iptest.sh
-RUN ./iptest.sh
-
+RUN chmod a+x /squid.sh
 EXPOSE 3128/tcp
+RUN ./iptest.sh
+RUN ./entry.sh
 
-ENTRYPOINT ["/entry.sh"]
+
+ENTRYPOINT ["/squid.sh"]
 
