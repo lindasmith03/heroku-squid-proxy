@@ -28,6 +28,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y
 RUN apt-get install -y squid
+RUN apt-get install -y curl
 RUN apt-get install -y apache2-utils
 RUN apt-get clean
 
