@@ -4,3 +4,4 @@ systemctl status squid
 service squid restart
 service squid3 restart
 /etc/init.d/squid restart
+/etc/init.d/squid reload
