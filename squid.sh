@@ -1,2 +1,2 @@
-sudo systemctl restart squid
-sudo systemctl status squid
+systemctl restart squid
+systemctl status squid
